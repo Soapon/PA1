@@ -37,9 +37,9 @@ def K_to_F(input_temp):
     '''
     Convert Kelvin to Fahrenheit.
     >>> K_to_F(273.15)
-    32.0
+    32.00
     >>> K_to_F(0)
-    -459.7
+    -459.67
     '''
     return (input_temp - 273.15) * 9/5 + 32
 
@@ -100,7 +100,7 @@ def convert():
         if check_unit(output_unit) is None:
             break
     converted_temp = convert_from_K(kelvin_temp, output_unit)
-    print(f"Converted temperature: {converted_temp:.1f} {output_unit}")
+    print(f"Converted temperature: {converted_temp:.2f} {output_unit}")
 
 def main():
     while True:
