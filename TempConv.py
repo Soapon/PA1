@@ -45,8 +45,9 @@ def K_to_F(input_temp):
 
 def check_unit(unit):
     if unit not in ['C', 'F', 'K']:
-        raise ValueError("Invalid unit. Please enter C, F, or K.")
-
+        print("Invalid unit. Please enter C, F, or K.")
+        return ValueError
+    return None
 
 def convert_to_K(input_temp, input_unit):
     '''
@@ -79,21 +80,23 @@ def convert_from_K(kelvin_temp, output_unit):
     
 def check_reality(kelvin_temp):
     if kelvin_temp< 0:
-        raise ValueError("Warning: Temperature below absolute zero! Not Physically possible.")
+        print("Warning: Temperature below absolute zero! Not Physically possible.")
+        return ValueError
+    return None
 def convert():
     while True:
         input_temp = float(input("Enter Initial temperature: "))
         input_unit = input("Enter Initial unit (C, F, K): ").upper()
-        check_input_unit(input_unit)
-        convert_to_K(input_temp, input_unit)
-        check_reality(kelvin_temp)
-        break
+        check_unit(input_unit)
+        kelvin_temp = convert_to_K(input_temp, input_unit)
+        if check_reality(kelvin_temp) is ValueError:
+            break
     while True:
         output_unit = input("Enter Desired unit (C, F, K): ").upper()
-        check_unit(output_unit)
-        break
-    converted_temp = convert_to_K(input_temp, input_uniit)
-    print(f"Converted temperature: {converted_temp} {output_unit}")
+        if check_unit(output_unit) is None:
+            break
+    converted_temp = convert_from_K(kelvin_temp, output_unit)
+    print(f"Converted temperature: {converted_temp:.1f} {output_unit}")
 
 def main():
     while True:
