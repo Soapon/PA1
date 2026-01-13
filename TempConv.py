@@ -1,6 +1,8 @@
 #Temperature convertor - 1st Draft
+#This program converts temperatures between Celsius, Fahrenheit, and Kelvin.
 
 def C_to_K(input_temp):
+
     '''
     Convert Celsius to Kelvin.
     >>> C_to_K(0)
@@ -69,6 +71,7 @@ def convert_to_K(input_temp, input_unit):
         kelvin_temp = input_temp
     return kelvin_temp
 
+
 def convert_from_K(kelvin_temp, output_unit):
         # Convert Kelvin to output unit
     if output_unit == 'C':
@@ -87,8 +90,10 @@ def check_reality(kelvin_temp):
 def convert():
     while True:
         input_temp = float(input("Enter Initial temperature: "))
-        input_unit = input("Enter Initial unit (C, F, K): ").upper()
-        check_unit(input_unit)
+        while True:
+            input_unit = input("Enter Initial unit (C, F, K): ").upper()
+            if check_unit(input) is None:
+                break
         kelvin_temp = convert_to_K(input_temp, input_unit)
         if check_reality(kelvin_temp) is None:
             break
