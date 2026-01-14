@@ -90,7 +90,12 @@ def check_reality(kelvin_temp):
 
 def convert():
     while True:
-        input_temp = float(input("Enter Initial temperature: "))
+        input_temp = input("Enter Initial temperature: ")
+        try:
+            input_temp = float(input_temp)
+        except ValueError:
+            print("Invalid temperature. Please enter a numeric value.")
+            continue
         input_false = True
         while input_false == True:
             input_unit = input("Enter Initial unit (C, F, K): ").upper()
