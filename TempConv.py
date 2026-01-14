@@ -49,7 +49,8 @@ def check_unit(unit):
     if unit not in ['C', 'F', 'K']:
         print("Invalid unit. Please enter C, F, or K.")
         return ValueError
-    return None
+    else:
+        return None
 
 def convert_to_K(input_temp, input_unit):
     '''
@@ -93,11 +94,12 @@ def convert():
         input_false = True
         while input_false == True:
             input_unit = input("Enter Initial unit (C, F, K): ").upper()
-            if check_unit(input) is None:
+            if check_unit(input_unit) is None:
                 input_false = False
         kelvin_temp = convert_to_K(input_temp, input_unit)
         if check_reality(kelvin_temp) is None:
             break
+        #If temperature is below absolute zero, prompt user to re-enter both value and unit
         print("Warning: Temperature below absolute zero! Not Physically possible.")
         print("Please re-enter temperature and unit.")
 
