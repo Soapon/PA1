@@ -49,6 +49,7 @@ def check_unit(unit):
     >>> check_unit('C')
 
     >>> check_unit('X')
+    Invalid unit. Please enter C, F, or K.
     <class 'ValueError'>
     '''
     if unit not in ['C', 'F', 'K']:
@@ -81,11 +82,11 @@ def convert_to_K(input_temp, input_unit):
 def convert_from_K(kelvin_temp, output_unit):
     '''
     >>> convert_from_K(273.15, 'C')
-    0.00
+    0.0
     >>> convert_from_K(273.15, 'F')
-    32.00
+    32.0
     >>> convert_from_K(300, 'K')
-    300.00
+    300
     '''
         # Convert Kelvin to output unit
     if output_unit == 'C':
