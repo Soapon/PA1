@@ -47,9 +47,9 @@ def K_to_F(kelvin_temp):
 def check_unit(unit):
     '''
     >>> check_unit('C')
-    None
+
     >>> check_unit('X')
-    ValueError
+    <class 'ValueError'>
     '''
     if unit not in ['C', 'F', 'K']:
         print("Invalid unit. Please enter C, F, or K.")
@@ -98,15 +98,14 @@ def convert_from_K(kelvin_temp, output_unit):
 def check_reality(kelvin_temp):
     '''
     >>> check_reality(0)
-    None
+
     >>> check_reality(-5)
-    ValueError
+    <class 'ValueError'>
     >>> check_reality(273.15)
-    None
+
     '''
     if kelvin_temp< 0:
         return ValueError
-    
     return None
 
 def convert():
