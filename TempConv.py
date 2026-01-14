@@ -10,7 +10,6 @@ def C_to_K(input_temp):
     >>> C_to_K(100)
     373.15
     '''
-
     return input_temp + 273.15
 
 def K_to_C(input_temp):
@@ -22,7 +21,7 @@ def K_to_C(input_temp):
     100.0
     '''
 
-    return input_temp - 273.15
+    return round(input_temp - 273.15, 2)
 
 def F_to_K(input_temp):
     '''
@@ -35,15 +34,15 @@ def F_to_K(input_temp):
 
     return (input_temp - 32) * 5/9 + 273.15
 
-def K_to_F(input_temp):
+def K_to_F(kelvin_temp):
     '''
     Convert Kelvin to Fahrenheit.
     >>> K_to_F(273.15)
-    32.00
+    32.0
     >>> K_to_F(0)
     -459.67
     '''
-    return (input_temp - 273.15) * 9/5 + 32
+    return round((kelvin_temp - 273.15) * 9/5 + 32.00, 2)
 
 def check_unit(unit):
     if unit not in ['C', 'F', 'K']:
@@ -55,11 +54,11 @@ def check_unit(unit):
 def convert_to_K(input_temp, input_unit):
     '''
     Convert temperature to Kelvin.
-    >>> convert_temperature(0, 'C')
+    >>> convert_to_K(0, 'C')
     273.15
-    >>> convert_temperature(32, 'F')
+    >>> convert_to_K(32, 'F')
     273.15
-    >>> convert_temperature(300, 'K')
+    >>> convert_to_K(300, 'K')
     300
     '''
     kelvin_temp = None
@@ -80,7 +79,7 @@ def convert_from_K(kelvin_temp, output_unit):
     elif output_unit == 'F':
         return K_to_F(kelvin_temp)
     elif output_unit == 'K':
-        return kelvin_temp
+        return round(kelvin_temp, 2)
     
 def check_reality(kelvin_temp):
     if kelvin_temp< 0:
