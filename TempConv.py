@@ -90,10 +90,11 @@ def check_reality(kelvin_temp):
 def convert():
     while True:
         input_temp = float(input("Enter Initial temperature: "))
-        while True:
+        input_false = True
+        while input_false == True:
             input_unit = input("Enter Initial unit (C, F, K): ").upper()
             if check_unit(input) is None:
-                break
+                input_false = False
         kelvin_temp = convert_to_K(input_temp, input_unit)
         if check_reality(kelvin_temp) is None:
             break
