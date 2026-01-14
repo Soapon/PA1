@@ -45,6 +45,12 @@ def K_to_F(kelvin_temp):
     return round((kelvin_temp - 273.15) * 9/5 + 32.00, 2)
 
 def check_unit(unit):
+    '''
+    >>> check_unit('C')
+    None
+    >>> check_unit('X')
+    ValueError
+    '''
     if unit not in ['C', 'F', 'K']:
         print("Invalid unit. Please enter C, F, or K.")
         return ValueError
@@ -73,6 +79,14 @@ def convert_to_K(input_temp, input_unit):
 
 
 def convert_from_K(kelvin_temp, output_unit):
+    '''
+    >>> convert_from_K(273.15, 'C')
+    0.00
+    >>> convert_from_K(273.15, 'F')
+    32.00
+    >>> convert_from_K(300, 'K')
+    300.00
+    '''
         # Convert Kelvin to output unit
     if output_unit == 'C':
         return K_to_C(kelvin_temp)
@@ -82,6 +96,14 @@ def convert_from_K(kelvin_temp, output_unit):
         return round(kelvin_temp, 2)
     
 def check_reality(kelvin_temp):
+    '''
+    >>> check_reality(0)
+    None
+    >>> check_reality(-5)
+    ValueError
+    >>> check_reality(273.15)
+    None
+    '''
     if kelvin_temp< 0:
         return ValueError
     
