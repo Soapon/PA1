@@ -12,6 +12,7 @@ def C_to_K(input_temp):
     '''
     return input_temp + 273.15
 
+
 def K_to_C(input_temp):
     '''
     Convert Kelvin to Celsius.
@@ -22,6 +23,7 @@ def K_to_C(input_temp):
     '''
 
     return round(input_temp - 273.15, 2)
+
 
 def F_to_K(input_temp):
     '''
@@ -34,6 +36,7 @@ def F_to_K(input_temp):
 
     return (input_temp - 32) * 5/9 + 273.15
 
+
 def K_to_F(kelvin_temp):
     '''
     Convert Kelvin to Fahrenheit.
@@ -43,6 +46,7 @@ def K_to_F(kelvin_temp):
     -459.67
     '''
     return round((kelvin_temp - 273.15) * 9/5 + 32.00, 2)
+
 
 def check_unit(unit):
     '''
