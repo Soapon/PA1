@@ -23,32 +23,32 @@ class TestTemperatureConversions(unittest.TestCase):
     def test_K_to_F(self):
         assert K_to_F(273.15) == 32.0
         assert K_to_F(0) == -459.67
-    
+
     def test_check_unit_valid(self):
-        self.assertIsNone(check_unit('C'))
-        self.assertIsNone(check_unit('F'))
-        self.assertIsNone(check_unit('K'))
+        assert check_unit('C') == None
+        assert check_unit('F') == None
+        assert check_unit('K') == None
     #check_unit
     def test_check_unit_invalid(self):
-        self.assertEqual(check_unit('X'), ValueError)
+        assert check_unit('X') == ValueError
 
    #convert_to_K 
     def test_convert_to_K(self):
-        self.assertEqual(convert_to_K(0, 'C'), 273.15)
-        self.assertEqual(convert_to_K(32, 'F'), 273.15)
-        self.assertEqual(convert_to_K(300, 'K'), 300)
-    
+        assert convert_to_K(0, 'C') == 273.15
+        assert convert_to_K(32, 'F') == 273.15
+        assert convert_to_K(300, 'K') == 300
+
     def test_convert_from_K(self):
-        self.assertEqual(convert_from_K(273.15, 'C'), 0.0)
-        self.assertEqual(convert_from_K(273.15, 'F'), 32.0)
-        self.assertEqual(convert_from_K(300, 'K'), 300)
+        assert convert_from_K(273.15, 'C') == 0.0
+        assert convert_from_K(273.15, 'F') == 32.0
+        assert convert_from_K(300, 'K') == 300
     #check_reality
     def test_check_reality_valid(self):
-        self.assertIsNone(check_reality(0))
-        self.assertIsNone(check_reality(273.15))
+        assert check_reality(0) == None
+        assert check_reality(273.15) == None
     #check_reality
     def test_check_reality_invalid(self):
-        self.assertEqual(check_reality(-5), ValueError)
+        assert check_reality(-5) == ValueError
 
 #Run the tests
 if __name__ == '__main__':
