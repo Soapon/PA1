@@ -9,20 +9,20 @@ from TempConv import (
 class TestTemperatureConversions(unittest.TestCase):
     #C_to_K
     def test_C_to_K(self):
-        self.assertEqual(C_to_K(0), 273.15)
-        self.assertEqual(C_to_K(100), 373.15)
+        assert C_to_K(0) == 273.15
+        assert C_to_K(100) == 373.15
     #K_to_C
     def test_K_to_C(self):
-        self.assertEqual(K_to_C(273.15), 0.0)
-        self.assertEqual(K_to_C(373.15), 100.0)
+        assert K_to_C(273.15) == 0.0
+        assert K_to_C(373.15) == 100.0
     #F_to_K
     def test_F_to_K(self):
-        self.assertEqual(F_to_K(32), 273.15)
-        self.assertEqual(F_to_K(212), 373.15)
+        assert F_to_K(32) == 273.15
+        assert F_to_K(212) == 373.15
     #K_to_F
     def test_K_to_F(self):
-        self.assertEqual(K_to_F(273.15), 32.0)
-        self.assertEqual(K_to_F(0), -459.67)
+        assert K_to_F(273.15) == 32.0
+        assert K_to_F(0) == -459.67
     
     def test_check_unit_valid(self):
         self.assertIsNone(check_unit('C'))
