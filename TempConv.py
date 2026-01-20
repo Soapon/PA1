@@ -145,7 +145,7 @@ def convert():
 def main():
     while True:
         convert()
-        again = input("Do you want to convert another temperature? (y for yes): ").lower()
+        again = input("Do you want to convert another temperature? (y for yes, anything else for no): ").lower()
         if again != 'y':
             break
         
