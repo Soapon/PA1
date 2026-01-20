@@ -1,5 +1,7 @@
-#Temperature convertor - 1st Draft
+#Temperature convertor
 #This program converts temperatures between Celsius, Fahrenheit, and Kelvin.
+#By: Sophia Ren
+#1/16/2025
 
 def C_to_K(input_temp):
 
